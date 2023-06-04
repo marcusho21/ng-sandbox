@@ -1,42 +1,67 @@
 {
-  // For more information, visit: https://go.microsoft.com/fwlink/?LinkId=733558
   "version": "2.0.0",
   "tasks": [
     {
+      "label": "watch:sandbox-lib",
       "type": "npm",
-      "script": "start",
+      "script": "watch:sandbox-lib",
       "isBackground": true,
       "problemMatcher": {
-        "owner": "typescript",
-        "pattern": "$tsc",
+        "pattern": {
+          "regexp": "^(.*)$"
+        },
         "background": {
           "activeOnStart": true,
-          "beginsPattern": {
-            "regexp": "(.*?)"
-          },
-          "endsPattern": {
-            "regexp": "bundle generation complete"
-          }
+          "beginsPattern": "Building Angular Package",
+          "endsPattern": "Compilation complete. Watching for file changes..."
+        }
+      },
+      "presentation": {
+        "panel": "new",
+        "group": "build",
+        "close": true
+      }
+    },
+    {
+      "label": "start",
+      "type": "npm",
+      "script": "start",
+      "dependsOn": ["watch:sandbox-lib"],
+      "dependsOrder": "sequence",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "panel": "new",
+        "group": "build",
+        "close": true
+      },
+      "isBackground": true,
+      "problemMatcher": {
+        "pattern": {
+          "regexp": "^(.*)$"
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "Application bundle generation complete.",
+          "endsPattern": "Watch mode enabled. Watching for file changes..."
         }
       }
     },
     {
-      "type": "npm",
-      "script": "test",
-      "isBackground": true,
-      "problemMatcher": {
-        "owner": "typescript",
-        "pattern": "$tsc",
-        "background": {
-          "activeOnStart": true,
-          "beginsPattern": {
-            "regexp": "(.*?)"
-          },
-          "endsPattern": {
-            "regexp": "bundle generation complete"
-          }
-        }
-      }
+      "label": "terminate:tasks",
+      "command": "echo ${input:terminate}",
+      "type": "shell",
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "terminate",
+      "type": "command",
+      "command": "workbench.action.tasks.terminate",
+      "args": "terminateAll"
     }
   ]
 }
