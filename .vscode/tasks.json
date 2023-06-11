@@ -2,32 +2,9 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "watch:sandbox-lib",
-      "type": "npm",
-      "script": "watch:sandbox-lib",
-      "isBackground": true,
-      "problemMatcher": {
-        "pattern": {
-          "regexp": "^(.*)$"
-        },
-        "background": {
-          "activeOnStart": true,
-          "beginsPattern": "Building Angular Package",
-          "endsPattern": "Compilation complete. Watching for file changes..."
-        }
-      },
-      "presentation": {
-        "panel": "new",
-        "group": "build",
-        "close": true
-      }
-    },
-    {
       "label": "start",
       "type": "npm",
       "script": "start",
-      "dependsOn": ["watch:sandbox-lib"],
-      "dependsOrder": "sequence",
       "group": {
         "kind": "build",
         "isDefault": true
