@@ -29,7 +29,7 @@
       "prefix": "sbx",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:browser-esbuild",
           "options": {
             "outputPath": "dist/sandbox",
             "index": "projects/sandbox/src/index.html",
@@ -46,7 +46,7 @@
             ],
             "styles": [
               "@angular/material/prebuilt-themes/indigo-pink.css",
-              "projects/sandbox/src/styles.scss"
+              "projects/sandbox/src/styles/styles.scss"
             ],
             "scripts": []
           },
@@ -107,45 +107,6 @@
             "lintFilePatterns": [
               "projects/sandbox/**/*.ts",
               "projects/sandbox/**/*.html"
-            ]
-          }
-        }
-      }
-    },
-    "sandbox-lib": {
-      "projectType": "library",
-      "root": "projects/sandbox-lib",
-      "sourceRoot": "projects/sandbox-lib/src",
-      "prefix": "sbx-lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "projects/sandbox-lib/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/sandbox-lib/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "projects/sandbox-lib/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:jest",
-          "options": {
-            "tsConfig": "projects/sandbox-lib/tsconfig.spec.json",
-            "polyfills": ["zone.js", "zone.js/testing"]
-          }
-        },
-        "lint": {
-          "builder": "@angular-eslint/builder:lint",
-          "options": {
-            "lintFilePatterns": [
-              "projects/sandbox-lib/**/*.ts",
-              "projects/sandbox-lib/**/*.html"
             ]
           }
         }

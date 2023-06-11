@@ -1,6 +1,5 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { GoogleMapsAutocompleteComponent } from 'sandbox-lib';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'sbx-home',
@@ -8,6 +7,6 @@ import { GoogleMapsAutocompleteComponent } from 'sandbox-lib';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, GoogleMapsAutocompleteComponent],
+  imports: [CommonModule],
 })
 export class HomeComponent {}
