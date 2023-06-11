@@ -10,13 +10,11 @@
       "inlineStyle": false,
       "changeDetection": "OnPush"
     },
-    "@schematics/angular:directive": {
-      "standalone": true,
-      "prefix": ""
-    },
-    "@schematics/angular:pipe": {
-      "standalone": true
-    }
+    "@schematics/angular:directive": { "standalone": true, "prefix": "" },
+    "@schematics/angular:pipe": { "standalone": true },
+    "@schematics/angular:guard": { "functional": true },
+    "@schematics/angular:resolver": { "functional": true },
+    "@schematics/angular:interceptor": { "functional": true }
   },
   "projects": {
     "sandbox": {
@@ -31,7 +29,7 @@
       "prefix": "sbx",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser-esbuild",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/sandbox",
             "index": "projects/sandbox/src/index.html",
@@ -71,10 +69,8 @@
             "development": {
               "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
-              "sourceMap": true,
-              "namedChunks": true
+              "sourceMap": true
             }
           },
           "defaultConfiguration": "production"
