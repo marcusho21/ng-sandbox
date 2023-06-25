@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { AutocompleteComponent } from '../shared/ui/components/autocomplete/autocomplete.component';
 
 @Component({
   selector: 'sbx-google-maps',
@@ -7,6 +8,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   templateUrl: './google-maps.component.html',
   styleUrls: ['./google-maps.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule],
+  imports: [CommonModule, AutocompleteComponent],
 })
 export class GoogleMapsComponent {}

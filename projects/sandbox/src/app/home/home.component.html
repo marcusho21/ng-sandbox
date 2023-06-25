@@ -1,1 +1,11 @@
-<p>Home</p>
+<sbx-sidenav [opened]="opened()" (openedChange)="opened.set($event)">
+  <div sidenav-menu class="sidenav-menu">
+    <h4>Menu</h4>
+
+    <a mat-button routerLink="/google-maps">Google Maps</a>
+  </div>
+
+  <div>
+    <sbx-toolbar (menuClick)="onMenuClicked()"></sbx-toolbar>
+  </div>
+</sbx-sidenav>

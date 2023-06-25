@@ -1,0 +1,14 @@
+<mat-sidenav-container>
+  <mat-sidenav
+    mode="over"
+    fixedInViewport
+    [opened]="opened"
+    (openedChange)="openedChange.emit($event)"
+  >
+    <ng-content select="[sidenav-menu]"></ng-content>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>
