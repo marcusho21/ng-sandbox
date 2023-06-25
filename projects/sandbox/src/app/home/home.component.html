@@ -2,7 +2,27 @@
   <div sidenav-menu class="sidenav-menu">
     <h4>Menu</h4>
 
-    <a mat-button routerLink="/google-maps">Google Maps</a>
+    <a
+      #homeLink="routerLinkActive"
+      mat-raised-button
+      routerLink="/"
+      routerLinkActive
+      [routerLinkActiveOptions]="{ exact: true }"
+      [color]="homeLink.isActive ? 'primary' : ''"
+      (click)="onNavigate()"
+      >Home</a
+    >
+    <a
+      #googleMapsLink="routerLinkActive"
+      mat-raised-button
+      routerLink="/google-maps"
+      routerLinkActive
+      [routerLinkActiveOptions]="{ exact: true }"
+      [color]="googleMapsLink.isActive ? 'primary' : ''"
+      (click)="onNavigate()"
+    >
+      Google Maps
+    </a>
   </div>
 
   <div>

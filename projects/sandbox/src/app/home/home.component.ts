@@ -1,9 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
-import { MatButtonModule } from '@angular/material/button';
-import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'sbx-home',
@@ -17,6 +17,7 @@ import { RouterLink } from '@angular/router';
     ToolbarComponent,
     MatButtonModule,
     RouterLink,
+    RouterLinkActive,
   ],
 })
 export class HomeComponent {
@@ -24,5 +25,9 @@ export class HomeComponent {
 
   onMenuClicked() {
     this.opened.update((o) => !o);
+  }
+
+  onNavigate() {
+    this.opened.update(() => false);
   }
 }
