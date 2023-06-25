@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 
@@ -18,6 +18,7 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
     MatButtonModule,
     RouterLink,
     RouterLinkActive,
+    RouterOutlet,
   ],
 })
 export class HomeComponent {
