@@ -2,7 +2,14 @@
   <div sidenav-menu class="sidenav-menu">
     <h4>Menu</h4>
 
-    <a
+    <sbx-link-button url="/" (navigate)="onNavigate()">Home</sbx-link-button>
+    <sbx-link-button url="/google-maps" (navigate)="onNavigate()">
+      Google Maps
+    </sbx-link-button>
+    <sbx-link-button url="/truncation" (navigate)="onNavigate()">
+      Truncation
+    </sbx-link-button>
+    <!-- <a
       #homeLink="routerLinkActive"
       mat-raised-button
       routerLink="/"
@@ -11,8 +18,8 @@
       [color]="homeLink.isActive ? 'primary' : ''"
       (click)="onNavigate()"
       >Home</a
-    >
-    <a
+    > -->
+    <!-- <a
       #googleMapsLink="routerLinkActive"
       mat-raised-button
       routerLink="/google-maps"
@@ -23,6 +30,18 @@
     >
       Google Maps
     </a>
+
+    <a
+      #truncationLink="routerLinkActive"
+      mat-raised-button
+      routerLink="/truncation"
+      routerLinkActive
+      [routerLinkActiveOptions]="{ exact: true }"
+      [color]="truncationLink.isActive ? 'primary' : ''"
+      (click)="onNavigate()"
+    >
+      Truncation
+    </a> -->
   </div>
 
   <div>

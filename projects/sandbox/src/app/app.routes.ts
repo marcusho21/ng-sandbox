@@ -13,6 +13,13 @@ export const APP_ROUTES: Routes = [
             (m) => m.GOOGLE_MAPS_ROUTES
           ),
       },
+      {
+        path: 'truncation',
+        loadChildren: () =>
+          import('./truncation/truncation.routes').then(
+            (m) => m.TRUNCATION_ROUTES
+          ),
+      },
     ],
   },
 ];

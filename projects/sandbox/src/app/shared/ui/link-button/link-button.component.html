@@ -1,0 +1,11 @@
+<a
+  #link="routerLinkActive"
+  mat-raised-button
+  [routerLink]="[url]"
+  routerLinkActive
+  [routerLinkActiveOptions]="{ exact: true }"
+  [color]="link.isActive ? 'primary' : ''"
+  (click)="navigate.emit()"
+>
+  <ng-content></ng-content>
+</a>

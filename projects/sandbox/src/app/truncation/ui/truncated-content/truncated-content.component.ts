@@ -2,11 +2,11 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'sbx-autocomplete',
+  selector: 'sbx-truncated-content',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './autocomplete.component.html',
-  styleUrls: ['./autocomplete.component.scss'],
+  templateUrl: './truncated-content.component.html',
+  styleUrls: ['./truncated-content.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AutocompleteComponent {}
+export class TruncatedContentComponent {}

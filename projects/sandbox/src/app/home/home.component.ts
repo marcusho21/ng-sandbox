@@ -4,6 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
+import { LinkButtonComponent } from '../shared/ui/link-button/link-button.component';
 
 @Component({
   selector: 'sbx-home',
@@ -19,6 +20,7 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
     RouterLink,
     RouterLinkActive,
     RouterOutlet,
+    LinkButtonComponent,
   ],
 })
 export class HomeComponent {
